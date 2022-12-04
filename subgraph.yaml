@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: JaMoon
+    network: matic
+    source:
+      address: "0x7DA6dA0B39085568aA91bdA0a8E8043E8713eBBB"
+      abi: JaMoon
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Swap
+      abis:
+        - name: JaMoon
+          file: ./abis/JaMoon.json
+      eventHandlers:
+        - event: Swap(string)
+          handler: handleSwap
+      file: ./src/ja-moon.ts
