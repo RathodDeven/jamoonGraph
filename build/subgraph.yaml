@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: JaMoon
@@ -17,10 +17,10 @@ dataSources:
         - Swap
       abis:
         - name: JaMoon
-          file: ./abis/JaMoon.json
+          file: JaMoon\abis\JaMoon.json
       eventHandlers:
         - event: Swap(string)
           handler: handleSwap
-      file: ./src/ja-moon.ts
+      file: JaMoon\JaMoon.wasm
 features:
   - ipfsOnEthereumContracts
